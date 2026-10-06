@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Studio | Contact Us</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #100b0d;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        header {
+            height: 80px;
+            padding: 0 7%;
+            background: #1b1216;
+            border-bottom: 1px solid #382027;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff4545;
+            font-size: 32px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #d4c2c7;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav .active {
+            color: #ff4545;
+        }
+
+        .nav-button {
+            color: white;
+            border: 1px solid #ff4545;
+            padding: 11px 23px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #e52e3c;
+        }
+
+        /* Main Section */
+        .container {
+            min-height: calc(100vh - 80px);
+            padding: 40px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .left {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #ff666d;
+            background: #30151b;
+            border: 1px solid #63252e;
+            border-radius: 25px;
+            padding: 10px 17px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 4vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            display: block;
+            color: #ff414d;
+        }
+
+        .description {
+            color: #c2afb5;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        /* Feature Items */
+        .features {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .icon {
+            min-width: 42px;
+            height: 42px;
+            background: #351820;
+            color: #ff666d;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+        }
+
+        .feature h3 {
+            font-size: 14px;
+            margin: 7px 0 10px;
+        }
+
+        .feature p {
+            color: #bbaab0;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* Contact Form */
+        .form-card {
+            flex: 1;
+            max-width: 550px;
+            background: linear-gradient(145deg, #21151a, #171014);
+            border: 1px solid #49252e;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 15px 45px #00000040;
+        }
+
+        .form-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: #3b1921;
+            color: #ff666d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .form-description {
+            color: #c2afb5;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 23px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 14px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            color: white;
+            background: #281a20;
+            border: 1px solid #51313a;
+            border-radius: 8px;
+            outline: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #bba5ad;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #ff4545;
+            box-shadow: 0 0 8px #ff454530;
+        }
+
+        textarea {
+            height: 105px;
+            resize: vertical;
+        }
+
+        /* Submit Button */
+        button {
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #f04444, #d91e39);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #f0444440;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .container {
+                padding: 35px 4%;
+                gap: 25px;
+            }
+
+            header {
+                padding: 0 4%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .features {
+                flex-wrap: wrap;
+            }
+
+            .form-card {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                height: auto;
+                padding: 20px 5%;
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 35px 5%;
+            }
+
+            .left,
+            .form-card {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+
+            .features {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .nav-button {
+                padding: 9px 13px;
+            }
+
+            .input-row {
+                flex-direction: column;
+            }
+
+            .form-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><span>R</span> Red Studio</div>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-button">Get Started</a>
+    </header>
+
+    <main class="container">
+
+        <section class="left">
+            <p class="tag">LET'S BUILD TOGETHER</p>
+
+            <h1>
+                Turn Your Ideas
+                <span>Into Reality.</span>
+            </h1>
+
+            <p class="description">
+                We create modern, clean and responsive web solutions
+                that help your business grow. Share your idea with us
+                and we'll bring it to life.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="icon">⚡</div>
+                    <div>
+                        <h3>Fast & Reliable</h3>
+                        <p>On-time delivery, every time.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">♢</div>
+                    <div>
+                        <h3>Secure</h3>
+                        <p>Your data is always safe with us.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">☆</div>
+                    <div>
+                        <h3>Modern Design</h3>
+                        <p>Clean, responsive and beautiful.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="form-card" id="contact">
+
+            <div class="form-icon">✉</div>
+
+            <h2>Get In Touch</h2>
+
+            <p class="form-description">
+                Have a project in mind or just want to say hello?
+                Fill out the form below and we'll get back to you soon.
+            </p>
+
+            <form action="#">
+                <div class="input-row">
+                    <input type="text" placeholder="Full Name" required>
+
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+
+                <input type="text" placeholder="Subject" required>
+
+                <textarea placeholder="Your Message" required></textarea>
+
+                <button type="submit">
+                    ➤ &nbsp; Send Message
+                </button>
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
